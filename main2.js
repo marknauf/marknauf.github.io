@@ -39,7 +39,7 @@ d3.csv('https://raw.githubusercontent.com/marknauf/marknauf.github.io/master/dat
             borderOpacity: 1,
             borderColor: '#09C1E3',
             popupTemplate: function(geography, data) { // This function should just return a string
-                return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>;';
+                return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
             },
             popupOnHover: true, // True to show the popup while hovering
             highlightOnHover: true,
