@@ -169,39 +169,6 @@ d3.csv('https://raw.githubusercontent.com/luminositylab/asu-gsv-map/master/data_
     });
 });
 
-
-function rescaleWorld(datamap) {
-  datamap.svg
-    .selectAll('g')
-    .attr('transform', 'translate(' + d3.event.translate + ') scale(' + d3.event.scale + ')');
-}
-
-function rescaleBubbles(datamap) {
-  var bubbleRadius = 4;
-  var bubbleBorder = 15;
-
-  datamap.svg
-    .selectAll('.datamaps-bubble')
-    .attr('r', bubbleRadius / d3.event.scale)
-    .style('stroke-width', (bubbleBorder / d3.event.scale) + 'px');
-}
-
-var map = new Datamap({
-  element: '#foo',
-  done: function(datamap) {
-    datamap.svg.call(d3.behavior.zoom().on('zoom', redraw));
-
-    function redraw() {
-      datamap.svg.select('g')
-        .selectAll('path')
-        .style('vector-effect', 'non-scaling-stroke');
-
-      rescaleWorld(datamap);
-      rescaleBubbles(datamap);
-    }
-  }
-});
-
 //THIS MAKES BAR CHARTS AND STUFF
 window.onload = function() {
     CanvasJS.addColorSet("Shades", [ //colorSet Array
