@@ -1,4 +1,4 @@
-d3.csv('https://raw.githubusercontent.com/luminositylab/asu-gsv-map/master/data_w_mission.csv?token=ARlDvabs9-OS3P8X-n5H5qgLW3zcV7fRks5YhS64wA%3D%3D', function(err, rows) {
+d3.csv('https://raw.githubusercontent.com/marknauf/marknauf.github.io/master/data_w_mission.csv', function(err, rows) {
     if (err) throw err;
 
     function unpack(rows, key) {
