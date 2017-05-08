@@ -1,78 +1,703 @@
+<!doctype html>
+<html lang="en">
+
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css?v=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="black-logo.png" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <script src="./datamaps.all.min.js"></script>
-    <script src="./canvas.js"></script>
+    <meta charset="utf-8">
+    <title>Welcome to Cemosoft</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site Description Here">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/jquery.steps.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i%7CMaterial+Icons" rel="stylesheet">
 </head>
 
-<body>
-    <title id="title">ASU GSV Summit Map</title>
-    <div id="myDiv" style="position: fixed; width: 80%; height: 80%;">
-        <script src="./main2.js"></script>
-        <div id="side" style="position: fixed; height: 20%; width: 80%">
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <center>Company</center>
-                        </th>
-                        <th>
-                            <center>Year Founded</center>
-                        </th>
-                        <th>
-                            <center>Industry</center>
-                        </th>
-                        <th>
-                            <center>Type</center>
-                        </th>
-                        <th>
-                            <center>Mission</center>
-                        </th>
-                        <th>
-                            <center>Bio</center>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id="company"></td>
-                        <td id="yearFounded"></td>
-                        <td id="industry"></td>
-                        <td id="type"></td>
-                        <td id="mission"></td>
-                        <td id="bio"></td>
-                    </tr>
-                </tbody>
-            </table>
+<body class=" ">
+    <a id="start"></a>
+    <div class="nav-container ">
+        <div class="bar bar--sm visible-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="index.html">
+                            <img class="logo logo-dark" alt="logo" src="img/cemosoftLogo.png" />
+                            <img class="logo logo-light" alt="logo" src="img/cemosoftLogo.png" />
+                        </a>
+                    </div>
+                    <div class="col-xs-9 col-sm-10 text-right">
+                        <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
+                            <i class="icon icon--sm stack-interface stack-menu"></i>
+                        </a>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
         </div>
+        <!--end bar-->
+        <nav id="menu1" class="bar bar--sm bar-1 hidden-xs bar--absolute bar--transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 col-sm-2 hidden-xs">
+                        <div class="bar__module">
+                            <a href="index.html">
+                                <img class="logo logo-dark" alt="logo" src="img/cemosoftLogo.png" />
+                                <img class="logo logo-light" alt="logo" src="img/cemosoftLogo.png" />
+                            </a>
+                        </div>
+                        <!--end module-->
+                    </div>
+                    <div class="col-md-11 col-sm-12 text-right text-left-xs text-left-sm">
+                        <div class="bar__module">
+                            <ul class="menu-horizontal text-left">
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">About</span>
+
+                                </li>
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">Product</span>
+
+                                </li>
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">Services</span>
+
+                                </li>
+
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">Ecopartners</span>
+
+                                </li>
+
+<!--
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">Contact Us</span>
+
+                                </li>
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">Blog</span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-md-2 col-sm-4">
+                                                    <ul class="menu-vertical">
+                                                        <li class="dropdown">
+                                                            <span class="dropdown__trigger">Articles</span>
+                                                            <div class="dropdown__container">
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        <div class="dropdown__content col-md-2 col-sm-4">
+                                                                            <ul class="menu-vertical">
+                                                                                <li>
+                                                                                    <a href="blog-articles-list.html">
+                                                                                            Simple List
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="blog-articles-list-minimal.html">
+                                                                                            Minimal List
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="blog-articles-magazine.html">
+                                                                                            Magazine
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="blog-articles-cards.html">
+                                                                                            Cards
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="blog-articles-cards-sidebar.html">
+                                                                                            Cards Sidebar
+                                                                                        </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="dropdown">
+                                                            <span class="dropdown__trigger">Post Single</span>
+                                                            <div class="dropdown__container">
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        <div class="dropdown__content col-md-2 col-sm-4">
+                                                                            <ul class="menu-vertical">
+                                                                                <li>
+                                                                                    <a href="blog-post-single.html">
+                                                                                            Standard Post
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="blog-post-audio-single.html">
+                                                                                            Audio Post
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="blog-post-image-single.html">
+                                                                                            Image Post
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="blog-post-video-single.html">
+                                                                                            Video Post
+                                                                                        </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </li>
+-->
+
+
+
+                            </ul>
+                        </div>
+                        <!--end module-->
+                        <div class="bar__module">
+                            <a class="btn btn--sm btn--primary type--uppercase" href="#">
+                                <span class="btn__text">
+                                        Contact Us
+                                    </span>
+                            </a>
+                        </div>
+                        <!--end module-->
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </nav>
+        <!--end bar-->
     </div>
-    <div id="rightDiv">
-        <a href="https://asugsvsummit.com/"><img src="Logo.png"></img>
-        </a>
-        <h1>About</h1>
-        <!-- <label class="switch">
-					  <input id = "slider" type="checkbox">
-					  <div class="slider round"></div></label> --->
-        <p style="font-size: 13px;">"The Annual ASU GSV Summit is the most important assembly of leading innovators across the education and talent sectors.
-            <br>
-            <br> This three-day sold-out event gathers more than 3,500 entrepreneurs, business leaders, investors, policy makers, philanthropists, and educators to accelerate innovation in education and talent."</p> <i style="text-align: right;">-The New York Times</i>
-        <h1>Summit Attendee Composition</h1>
-        <div id="piechartContainer"></div>
-        <h1>Summit Attendance Growth</h1>
-        <div id="barchartContainer" style="height: 300px; width: 100%;"></div>
-        <h1>More Information</h1>
-        <a href="https://asugsvsummit.com/2016-speakers/">
-            <button class=" button button1">2016 Speakers</button>
-        </a>
-        <p></p>
-        <a href="https://asugsvsummit.com/2016-sponsors/">
-            <button class=" button button1">2016 Sponsors</button>
-        </a>
+    <div class="main-container">
+        <section class="text-center height-80 imagebg" data-overlay="4">
+            <div class="background-image-holder">
+                <img alt="background" src="img/city8.jpeg" />
+            </div>
+            <div class="container pos-vertical-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="typed-headline">
+                            <span class="h1 inline-block">CEMOSoft &mdash; A platform for</span>
+                            <span class="h1 inline-block typed-text typed-text--cursor color--primary" data-typed-strings="Customer Insights, Instant Alerts, Customer Rewards, Business Intelligence"></span>
+                        </div>
+                        <p class="lead">
+
+                            A leadership team committed to excellence
+                            <br class="hidden-xs hidden-sm" /> in product management and customer services.
+                        </p>
+                        <a class="btn btn--primary type--uppercase" href="#">
+                            <span class="btn__text">
+                                     Learn More
+                                </span>
+                        </a>
+                        <!--
+                            <span class="block type--fine-print">or
+                                <a href="index.html">view the demos</a>
+                            </span>
+-->
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <section class="video video-1 text-center bg--secondary space--sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="modal-instance">
+                            <div class="video-play-icon video-play-icon--sm modal-trigger box-shadow"></div>
+                            <div class="modal-container">
+                                <div class="modal-content bg-dark" data-width="60%" data-height="60%">
+                                    <iframe src="https://www.youtube.com/embed/A8QgayyWmRU?autoplay=1" allowfullscreen="allowfullscreen"></iframe>
+                                </div>
+                                <!--end of modal-content-->
+                            </div>
+                            <!--end of modal-container-->
+                        </div>
+                        <!--end of modal instance-->
+                        <h2>
+                                See what we are all about.
+                            </h2>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+
+        <section class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <h2>Products</h2>
+                        <p class="lead">
+
+                            CEMOSoft's platform includes several products architected, designed and implemented to operate across mobile devices and operating systems. We focus on building, testing and integrating strategic technologies to accelerate adoptions by business.
+
+                        </p>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <section class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="feature feature-6">
+
+
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQ3MCA0NzAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ3MCA0NzAiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiPgogIDxnPgogICAgPHBhdGggZD0ibTMzNy4yMTgsMjI4LjYxNGMyMC42ODgsMCAzNy41MTktMTYuODMxIDM3LjUxOS0zNy41MThzLTE2LjgzMS0zNy41MTgtMzcuNTE5LTM3LjUxOC0zNy41MTgsMTYuODMtMzcuNTE4LDM3LjUxOCAxNi44MywzNy41MTggMzcuNTE4LDM3LjUxOHptMC02MC4wMzZjMTIuNDE3LDAgMjIuNTE5LDEwLjEwMiAyMi41MTksMjIuNTE4IDAsMTIuNDE3LTEwLjEwMiwyMi41MTgtMjIuNTE5LDIyLjUxOC0xMi40MTYsMC0yMi41MTgtMTAuMTAyLTIyLjUxOC0yMi41MTgtNS42ODQzNGUtMTQtMTIuNDE2IDEwLjEwMi0yMi41MTggMjIuNTE4LTIyLjUxOHoiIGZpbGw9IiM0YTkwZTIiLz4KICAgIDxwYXRoIGQ9Im0zMzcuMjE4LDI0My42MTRjLTEwLjE4MSwwLTIwLjI3NywyLjUyOS0yOS4xOTgsNy4zMTMtMy42NSwxLjk1OC01LjAyMyw2LjUwNC0zLjA2NSwxMC4xNTQgMS45NTcsMy42NDkgNi41MDEsNS4wMjIgMTAuMTUzLDMuMDY1IDYuNzQ5LTMuNjE5IDE0LjM5Ni01LjUzMiAyMi4xMS01LjUzMiAyMy4zMTMsMCA0Mi43MDgsMTcuMDk2IDQ2LjMxLDM5LjQwOGgtNDYuMzFjLTQuMTQzLDAtNy41LDMuMzU4LTcuNSw3LjVzMy4zNTcsNy41IDcuNSw3LjVoNTQuNDA4YzQuMTQzLDAgNy41LTMuMzU4IDcuNS03LjUtMS4xMzY4N2UtMTMtMzQuMTM3LTI3Ljc3Mi02MS45MDgtNjEuOTA4LTYxLjkwOHoiIGZpbGw9IiM0YTkwZTIiLz4KICAgIDxwYXRoIGQ9Im0xMzMuNDQ4LDI5OC4wMjFoLTQ2Ljk3NWMzLjYwMi0yMi4zMTIgMjIuOTk3LTM5LjQwOCA0Ni4zMS0zOS40MDggNy43MTUsMCAxNS4zNTgsMS45MTIgMjIuMTA2LDUuNTMgMy42NSwxLjk1OCA4LjE5NywwLjU4NSAxMC4xNTMtMy4wNjYgMS45NTgtMy42NSAwLjU4NS04LjE5Ni0zLjA2NS0xMC4xNTQtOC45Mi00Ljc4My0xOS4wMTUtNy4zMTEtMjkuMTk0LTcuMzExLTM0LjEzNywwLTYxLjkwOCwyNy43NzEtNjEuOTA4LDYxLjkwOCAwLDQuMTQyIDMuMzU3LDcuNSA3LjUsNy41aDU1LjA3NGM0LjE0MywwIDcuNS0zLjM1OCA3LjUtNy41cy0zLjM1OC03LjQ5OS03LjUwMS03LjQ5OXoiIGZpbGw9IiM0YTkwZTIiLz4KICAgIDxwYXRoIGQ9Im0xMzIuNzgyLDIyOC42MTRjMjAuNjg4LDAgMzcuNTE4LTE2LjgzMSAzNy41MTgtMzcuNTE4cy0xNi44My0zNy41MTgtMzcuNTE4LTM3LjUxOC0zNy41MTksMTYuODMtMzcuNTE5LDM3LjUxOCAxNi44MzIsMzcuNTE4IDM3LjUxOSwzNy41MTh6bTAtNjAuMDM2YzEyLjQxNiwwIDIyLjUxOCwxMC4xMDIgMjIuNTE4LDIyLjUxOCAwLDEyLjQxNy0xMC4xMDIsMjIuNTE4LTIyLjUxOCwyMi41MTgtMTIuNDE3LDAtMjIuNTE5LTEwLjEwMi0yMi41MTktMjIuNTE4IDAuMDAxLTEyLjQxNiAxMC4xMDItMjIuNTE4IDIyLjUxOS0yMi41MTh6IiBmaWxsPSIjNGE5MGUyIi8+CiAgICA8cGF0aCBkPSJtMjM1LDIzMS4zMjZjMjYuNjM2LDAgNDguMzA2LTIxLjY3IDQ4LjMwNi00OC4zMDYgMC0yNi42MzYtMjEuNjctNDguMzA2LTQ4LjMwNi00OC4zMDZzLTQ4LjMwNiwyMS42Ny00OC4zMDYsNDguMzA2Yy0yLjg0MjE3ZS0xNCwyNi42MzYgMjEuNjcsNDguMzA2IDQ4LjMwNiw0OC4zMDZ6bTAtODEuNjEyYzE4LjM2NSwwIDMzLjMwNiwxNC45NDEgMzMuMzA2LDMzLjMwNiAwLDE4LjM2NS0xNC45NCwzMy4zMDYtMzMuMzA2LDMzLjMwNnMtMzMuMzA2LTE0Ljk0MS0zMy4zMDYtMzMuMzA2Yy0yLjg0MjE3ZS0xNC0xOC4zNjUgMTQuOTQxLTMzLjMwNiAzMy4zMDYtMzMuMzA2eiIgZmlsbD0iIzRhOTBlMiIvPgogICAgPHBhdGggZD0ibTIzNSwyNDYuMzI2Yy00NC45MTgsMC04MS40NjEsMzYuNTQzLTgxLjQ2MSw4MS40NiAwLDQuMTQyIDMuMzU3LDcuNSA3LjUsNy41aDE0Ny45MjFjNC4xNDMsMCA3LjUtMy4zNTggNy41LTcuNSAwLTQ0LjkxNy0zNi41NDMtODEuNDYtODEuNDYtODEuNDZ6bS02Ni4wNCw3My45NmMzLjczNS0zMy4xMyAzMS45MjgtNTguOTYgNjYuMDQtNTguOTZzNjIuMzA0LDI1LjgzIDY2LjAzOSw1OC45NmgtMTMyLjA3OXoiIGZpbGw9IiM0YTkwZTIiLz4KICAgIDxwYXRoIGQ9Im00NjIuNSwyMjcuNWgtMTguMjFjLTMuODc3LTEwOS41MzItOTIuMjU4LTE5Ny45MTMtMjAxLjc5LTIwMS43ODl2LTE4LjIxMWMwLTQuMTQyLTMuMzU3LTcuNS03LjUtNy41cy03LjUsMy4zNTgtNy41LDcuNXYxOC4yMTFjLTEwOS41MzIsMy44NzYtMTk3LjkxMyw5Mi4yNTctMjAxLjc5LDIwMS43ODloLTE4LjIxYy00LjE0MywwLTcuNSwzLjM1OC03LjUsNy41czMuMzU3LDcuNSA3LjUsNy41aDE4LjIxYzMuODc3LDEwOS41MzIgOTIuMjU4LDE5Ny45MTMgMjAxLjc5LDIwMS43ODl2MTguMjExYzAsNC4xNDIgMy4zNTcsNy41IDcuNSw3LjVzNy41LTMuMzU4IDcuNS03LjV2LTE4LjIxMWMxMDkuNTMyLTMuODc2IDE5Ny45MTMtOTIuMjU3IDIwMS43OS0yMDEuNzg5aDE4LjIxYzQuMTQzLDAgNy41LTMuMzU4IDcuNS03LjVzLTMuMzU3LTcuNS03LjUtNy41em0tMjIwLDIwMS43Nzl2LTE3LjkwM2MwLTQuMTQyLTMuMzU3LTcuNS03LjUtNy41cy03LjUsMy4zNTgtNy41LDcuNXYxNy45MDNjLTEwMS4yNi0zLjg2MS0xODIuOTE5LTg1LjUxOS0xODYuNzgtMTg2Ljc3OWgxNy45MDRjNC4xNDMsMCA3LjUtMy4zNTggNy41LTcuNXMtMy4zNTctNy41LTcuNS03LjVoLTE3LjkwNGMzLjg2MS0xMDEuMjYgODUuNTItMTgyLjkxOCAxODYuNzgtMTg2Ljc3OXYxNy45MDNjMCw0LjE0MiAzLjM1Nyw3LjUgNy41LDcuNXM3LjUtMy4zNTggNy41LTcuNXYtMTcuOTAzYzEwMS4yNiwzLjg2MSAxODIuOTE4LDg1LjUxOSAxODYuNzgsMTg2Ljc3OWgtMTcuOTA0Yy00LjE0MywwLTcuNSwzLjM1OC03LjUsNy41czMuMzU3LDcuNSA3LjUsNy41aDE3LjkwNGMtMy44NjIsMTAxLjI2LTg1LjUyLDE4Mi45MTgtMTg2Ljc4LDE4Ni43Nzl6IiBmaWxsPSIjNGE5MGUyIi8+CiAgPC9nPgo8L3N2Zz4K" />
+
+
+
+                            <h4>Customer Insight Management</h4>
+                            <p>
+                                Text will go here talking about Customer Insight Management
+                            </p>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="feature feature-6">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTcuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMwMC41NDcgMzAwLjU0NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzAwLjU0NyAzMDAuNTQ3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTIwMy42MTEsMjA2Ljk1OGMtNC4xNDIsMC03LjUsMy4zNTgtNy41LDcuNXY0Mi4zOWMwLDE1LjgyNS0xMi44NzUsMjguNjk5LTI4LjY5OSwyOC42OTlINDguODE1ICAgYy0xNS44MjUsMC0yOC42OTktMTIuODc1LTI4LjY5OS0yOC42OTlWNDMuNjk5QzIwLjExNiwyNy44NzUsMzIuOTkxLDE1LDQ4LjgxNSwxNWgxMTguNTk2YzE1LjgyNSwwLDI4LjY5OSwxMi44NzUsMjguNjk5LDI4LjY5OSAgIGMwLDQuMTQyLDMuMzU4LDcuNSw3LjUsNy41czcuNS0zLjM1OCw3LjUtNy41QzIxMS4xMTEsMTkuNjA0LDE5MS41MDcsMCwxNjcuNDEyLDBINDguODE1QzI0LjcyLDAsNS4xMTYsMTkuNjA0LDUuMTE2LDQzLjY5OSAgIHYyMTMuMTQ4YzAsMjQuMDk2LDE5LjYwNCw0My42OTksNDMuNjk5LDQzLjY5OWgxMTguNTk2YzI0LjA5NiwwLDQzLjY5OS0xOS42MDQsNDMuNjk5LTQzLjY5OXYtNDIuMzkgICBDMjExLjExMSwyMTAuMzE1LDIwNy43NTMsMjA2Ljk1OCwyMDMuNjExLDIwNi45NTh6IiBmaWxsPSIjNGE5MGUyIi8+Cgk8cGF0aCBkPSJNMTc4LjU0Nyw0OC43NzZjNC4xNDIsMCw3LjUtMy4zNTgsNy41LTcuNXMtMy4zNTgtNy41LTcuNS03LjVIMzcuNjhjLTQuMTQyLDAtNy41LDMuMzU4LTcuNSw3LjVWMjM2LjMzICAgYzAsNC4xNDIsMy4zNTgsNy41LDcuNSw3LjVoMTQwLjg2N2M0LjE0MiwwLDcuNS0zLjM1OCw3LjUtNy41di0yMGMwLTQuMTQyLTMuMzU4LTcuNS03LjUtNy41cy03LjUsMy4zNTgtNy41LDcuNXYxMi41SDQ1LjE4ICAgVjQ4Ljc3NkgxNzguNTQ3eiIgZmlsbD0iIzRhOTBlMiIvPgoJPHBhdGggZD0iTTEwMi44MTMsMjU2LjU2M2MtMS40LDEuNC0yLjIsMy4zMy0yLjIsNS4zMWMwLDEuOTcsMC44LDMuOSwyLjIsNS4zYzEuMzksMS4zOSwzLjMzLDIuMiw1LjMsMi4yYzEuOTcsMCwzLjkxLTAuODEsNS4zLTIuMiAgIGMxLjQtMS40LDIuMi0zLjMzLDIuMi01LjNjMC0xLjk4LTAuOC0zLjkxLTIuMi01LjMxYy0xLjM5LTEuMzktMy4zMy0yLjE5LTUuMy0yLjE5ICAgQzEwNi4xNDQsMjU0LjM3MywxMDQuMjAzLDI1NS4xNzMsMTAyLjgxMywyNTYuNTYzeiIgZmlsbD0iIzRhOTBlMiIvPgoJPHBhdGggZD0iTTIzNC44MDksMTM3LjA3MmM0LjE0MiwwLDcuNS0zLjM1OCw3LjUtNy41di0yNS4yMTljMC00LjE0Mi0zLjM1OC03LjUtNy41LTcuNXMtNy41LDMuMzU4LTcuNSw3LjV2MjUuMjE5ICAgQzIyNy4zMDksMTMzLjcxNCwyMzAuNjY3LDEzNy4wNzIsMjM0LjgwOSwxMzcuMDcyeiIgZmlsbD0iIzRhOTBlMiIvPgoJPHBhdGggZD0iTTIzNC44MTMsMTQ4LjkzM2MtMS45OCwwLTMuOTEsMC44LTUuMzEsMi4yYy0xLjM5LDEuNC0yLjE5LDMuMzMtMi4xOSw1LjNjMCwxLjk4LDAuOCwzLjkxLDIuMTksNS4zMSAgIGMxLjQsMS4zOSwzLjMzLDIuMTksNS4zMSwyLjE5YzEuOTcsMCwzLjktMC44LDUuMy0yLjE5YzEuMzktMS40LDIuMi0zLjMzLDIuMi01LjMxYzAtMS45Ny0wLjgxLTMuOS0yLjItNS4zICAgQzIzOC43MTMsMTQ5LjczMywyMzYuNzgzLDE0OC45MzMsMjM0LjgxMywxNDguOTMzeiIgZmlsbD0iIzRhOTBlMiIvPgoJPHBhdGggZD0iTTI4Ny45MzEsNjguMjA4SDE3OC41NTZjLTQuMTQyLDAtNy41LDMuMzU4LTcuNSw3LjV2NzAuNzM4bC00MS41MiwzMi43NDhjLTIuNTA4LDEuOTc5LTMuNDg4LDUuMzI5LTIuNDQxLDguMzQ3ICAgYzEuMDQ3LDMuMDE4LDMuODkxLDUuMDQyLDcuMDg2LDUuMDQyaDE1My43NWM0LjE0MiwwLDcuNS0zLjM1OCw3LjUtNy41Vjc1LjcwOEMyOTUuNDMxLDcxLjU2NSwyOTIuMDczLDY4LjIwOCwyODcuOTMxLDY4LjIwOHogICAgTTI4MC40MzEsMTc3LjU4M0gxNTUuOGwyNy40LTIxLjYxMWMxLjgwMy0xLjQyMiwyLjg1NS0zLjU5MiwyLjg1NS01Ljg4OVY4My4yMDhoOTQuMzc1VjE3Ny41ODN6IiBmaWxsPSIjNGE5MGUyIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                            <h4>Instant Alerts<br>Management</h4>
+                            <p>
+                                Text will go here talking about Instant Alerts Management
+                            </p>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="feature feature-6">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU5IDU5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1OSA1OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNy4yNjcsMTkuMzMyTDQ4Ljg2NiwwSDM2LjUzNEwyOS42LDExLjU1N0wyMi42NjcsMEgxMC4zMzRsMTEuNTYzLDE5LjI3MkMxNC4yOTQsMjIuMzA1LDguOSwyOS43MjgsOC45LDM4LjQgICAgQzguOSw0OS43NTksMTguMTQxLDU5LDI5LjUsNTlzMjAuNi05LjI0MSwyMC42LTIwLjZDNTAuMSwyOS43ODksNDQuNzg1LDIyLjQwNiwzNy4yNjcsMTkuMzMyeiBNMzcuNjY3LDJoNy42NjdsLTkuOTkzLDE2LjY1NiAgICBjLTAuNzYtMC4yMjUtMS41NDItMC4zOTgtMi4zMzYtMC41MzVjLTAuMzMtMC4wNTgtMC42Ni0wLjExLTAuOTkxLTAuMTUyYy0wLjIzNC0wLjAyOS0wLjQ2Ny0wLjA1Ny0wLjcwMy0wLjA3OCAgICBDMzAuNzA4LDE3LjgzNywzMC4xMDQsMTcuOCwyOS41LDE3LjhjLTAuNDM4LDAtMC44ODUsMC4wMTctMS4zNDQsMC4wNTFMMzcuNjY3LDJ6IE0xMy44NjYsMmg3LjY2N2w2LjksMTEuNWwtMi44MDYsNC42NzcgICAgYy0wLjU2NywwLjEwOC0xLjEyMSwwLjI0OC0xLjY3LDAuNDAyYy0wLjA0MSwwLjAxMS0wLjA4NiwwLjAxOC0wLjEyNywwLjAzTDEzLjg2NiwyeiBNMjkuNSw1N2MtMTAuMjU2LDAtMTguNi04LjM0NC0xOC42LTE4LjYgICAgYzAtOC4yMTcsNS4zNjEtMTUuMTk0LDEyLjc2NS0xNy42NDlsMC4wMjQtMC4wMDhjMC4zNzMtMC4xMjMsMC43NjUtMC4yMzEsMS4xNjQtMC4zMzJjMC4wNzctMC4wMiwwLjE1NC0wLjA0MSwwLjIzMS0wLjA2ICAgIGMwLjQzLTAuMTAzLDAuODctMC4xOTUsMS4zMjMtMC4yNzFoMC4wMDNjMC41MzUtMC4wOSwxLjA0Mi0wLjE1NSwxLjUzMy0wLjIwMWMwLjUxNC0wLjA0MywxLjAzMS0wLjA3OSwxLjU1Ni0wLjA3OSAgICBjMC41NjcsMCwxLjEyNSwwLjAzNSwxLjY3OSwwLjA4NWMwLjI3NiwwLjAyNiwwLjU1LDAuMDY1LDAuODI1LDAuMTA0YzAuMjQ3LDAuMDM0LDAuNDkzLDAuMDcsMC43MzcsMC4xMTMgICAgYzAuMzcsMC4wNjcsMC43MzgsMC4xNDMsMS4xMDUsMC4yMzJjMC4xMDksMC4wMjYsMC4yMTcsMC4wNTYsMC4zMjYsMC4wODRjMC40MzMsMC4xMTQsMC44NjUsMC4yMzcsMS4yOTQsMC4zODNsMC4wNTYsMC4wMTkgICAgQzQyLjgyOCwyMy4zMyw0OC4xLDMwLjI1Myw0OC4xLDM4LjRDNDguMSw0OC42NTYsMzkuNzU2LDU3LDI5LjUsNTd6IiBmaWxsPSIjNGE5MGUyIi8+CgkJPHBhdGggZD0iTTI5LjUsMjIuMjhjLTguODg5LDAtMTYuMTIsNy4yMzEtMTYuMTIsMTYuMTJjMCw4Ljg4OCw3LjIzMSwxNi4xMTksMTYuMTIsMTYuMTE5UzQ1LjYyLDQ3LjI4OCw0NS42MiwzOC40ICAgIFMzOC4zODksMjIuMjgsMjkuNSwyMi4yOHogTTI5LjUsNTIuNTJjLTcuNzg2LDAtMTQuMTItNi4zMzQtMTQuMTItMTQuMTE5YzAtNy43ODYsNi4zMzQtMTQuMTIsMTQuMTItMTQuMTIgICAgczE0LjEyLDYuMzM0LDE0LjEyLDE0LjEyQzQzLjYyLDQ2LjE4NiwzNy4yODYsNTIuNTIsMjkuNSw1Mi41MnoiIGZpbGw9IiM0YTkwZTIiLz4KCQk8cGF0aCBkPSJNNDEuMDM0LDM0LjY5MWMtMC4xMTgtMC4zNjItMC40MzEtMC42MjYtMC44MDctMC42ODFsLTYuNzk4LTAuOTg4bC0zLjA0LTYuMTZjLTAuMzM3LTAuNjg0LTEuNDU3LTAuNjg0LTEuNzk0LDAgICAgbC0zLjA0LDYuMTZsLTYuNzk4LDAuOTg4Yy0wLjM3NiwwLjA1NS0wLjY4OSwwLjMxOC0wLjgwNywwLjY4MWMtMC4xMTgsMC4zNjEtMC4wMiwwLjc1OSwwLjI1MywxLjAyNGw0LjkxOSw0Ljc5NWwtMS4xNjIsNi43NzEgICAgYy0wLjA2NCwwLjM3NSwwLjA5LDAuNzU0LDAuMzk4LDAuOTc4YzAuMzA4LDAuMjI0LDAuNzE1LDAuMjU0LDEuMDUzLDAuMDc2bDYuMDgxLTMuMTk1bDYuMDgxLDMuMTk1ICAgIGMwLjE0NiwwLjA3NywwLjMwNiwwLjExNSwwLjQ2NSwwLjExNWMwLjIwNywwLDAuNDE0LTAuMDY0LDAuNTg4LTAuMTkxYzAuMzA4LTAuMjI0LDAuNDYyLTAuNjAzLDAuMzk4LTAuOTc4bC0xLjE2Mi02Ljc3MSAgICBsNC45MTktNC43OTVDNDEuMDUzLDM1LjQ1LDQxLjE1MSwzNS4wNTMsNDEuMDM0LDM0LjY5MXogTTM0LjA4OCwzOS40NDZjLTAuMjM1LDAuMjI5LTAuMzQzLDAuNTYxLTAuMjg4LDAuODg1bDAuOTA4LDUuMjkxICAgIGwtNC43NTItMi40OTdjLTAuMTQ2LTAuMDc3LTAuMzA2LTAuMTE1LTAuNDY1LTAuMTE1cy0wLjMyLDAuMDM4LTAuNDY1LDAuMTE1bC00Ljc1MiwyLjQ5N2wwLjkwOC01LjI5MSAgICBjMC4wNTYtMC4zMjQtMC4wNTItMC42NTUtMC4yODgtMC44ODVsLTMuODQ1LTMuNzQ4bDUuMzEzLTAuNzcyYzAuMzI2LTAuMDQ3LDAuNjA3LTAuMjUyLDAuNzUzLTAuNTQ3bDIuMzc2LTQuODE0bDIuMzc2LDQuODE0ICAgIGMwLjE0NiwwLjI5NSwwLjQyNywwLjUsMC43NTMsMC41NDdsNS4zMTMsMC43NzJMMzQuMDg4LDM5LjQ0NnoiIGZpbGw9IiM0YTkwZTIiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                            <h4>Customer Reward Management</h4>
+                            <p>
+                                Text will go here talking about Customer Reward Management Management
+                            </p>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="feature feature-6">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTYgNDk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTYgNDk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0zODguNjg4LDBsLTI3LjQ2NCwyNy40NjRDMzI3LjI0OCw5Ljk1MiwyODguNzc2LDAsMjQ4LDBoLTh2MjQuMkMxMjAuMTg0LDI4LjQ0LDI0LDEyNy4xNjgsMjQsMjQ4ICAgICBjMCw1Ny4xNTIsMjEuMzA0LDExMS4wMDgsNjAuMDg4LDE1Mi42bC0xNy4xMDQsMTcuMTA0bDUuNjU2LDUuNjU2YzE0LjQ2NCwxNC40NjQsMzAuNCwyNi45MDQsNDcuNDcyLDM3LjIxNkwxMDAuNjg4LDQ4MEgwdjE2ICAgICBoMTA3LjMxMmwyNy4zNDQtMjcuMzQ0QzE2OS4yOTYsNDg2LjQ5NiwyMDcuOTA0LDQ5NiwyNDgsNDk2YzY2LjI0OCwwLDEyOC41Mi0yNS44LDE3NS4zNi03Mi42NGw1LjY1Ni01LjY1Nkw0MTEuOTEyLDQwMC42ICAgICBjMzYuOTY4LTM5LjY0LDU4LTkwLjQzMiw1OS44OTYtMTQ0LjZINDk2di04YzAtOTAuMDQtNDguMjQtMTY5LjAwOC0xMjAuMjI0LTIxMi40NjRMMzk1LjMxMiwxNkg0OTZWMEgzODguNjg4eiBNMjQ4LDEzNiAgICAgYzYxLjc2LDAsMTEyLDUwLjI0LDExMiwxMTJ2OGgxNS42MDhjLTEuNzUyLDI4LjUxMi0xMi44LDU1LjE4NC0zMS43Miw3Ni41NzZsLTExLjA0LTExLjA0bC01LjY1Niw1LjY1NiAgICAgQzMwNi4wNDgsMzQ4LjM1MiwyNzcuOTIsMzYwLDI0OCwzNjBjLTI5LjkyLDAtNTguMDQ4LTExLjY0OC03OS4xOTItMzIuODA4bC01LjY1Ni01LjY1NmwtMTEuMDQsMTEuMDQgICAgIEMxMzEuNDI0LDMwOS4xODQsMTIwLDI3OS41MDQsMTIwLDI0OGMwLTY3Ljg4LDUzLjE1Mi0xMjMuNDMyLDEyMC0xMjcuNTkyVjEzNkgyNDh6IE00MCwyNDhjMC0xMTIuMDE2LDg5LTIwMy41NzYsMjAwLTIwNy44djY0LjIgICAgIGMtNzUuNjcyLDQuMTkyLTEzNiw2Ni45MDQtMTM2LDE0My42YzAsMzUuNzc2LDEzLjA5Niw2OS40NjQsMzYuOCw5NS44ODhMOTUuNDA4LDM4OS4yOEM1OS42MzIsMzUwLjcyLDQwLDMwMC44OCw0MCwyNDh6ICAgICAgTTI0OCw0ODBjLTM1LjczNiwwLTcwLjIwOC04LjA3Mi0xMDEuNDE2LTIzLjI3MmwzNS4wNzItMzUuMDcybC0xMS4zMTItMTEuMzEybC0zOC41MzYsMzguNTM2ICAgICBjLTE1LjAxNi04LjcyLTI5LjE1Mi0xOS4xNTItNDIuMTA0LTMxLjI3Mmw3My42MTYtNzMuNjE2QzE4Ni43MTIsMzY0LjY4OCwyMTYuNDgsMzc2LDI0OCwzNzYgICAgIGMzMS41MTIsMCw2MS4yODgtMTEuMzEyLDg0LjY4LTMyLjAwOGw3My42MTYsNzMuNjE2QzM2My4xOTIsNDU3LjkwNCwzMDcuMjk2LDQ4MCwyNDgsNDgweiBNNDAwLjYsMzg5LjI4bC00NS40LTQ1LjM5MiAgICAgYzIxLjkyLTI0LjQ0LDM0LjYxNi01NS4xMDQsMzYuNDA4LTg3Ljg4OEg0NTUuOEM0NTMuOTI4LDMwNS44ODgsNDM0LjU1MiwzNTIuNjcyLDQwMC42LDM4OS4yOHogTTQ3OS44NjQsMjQwSDM3NS43NTIgICAgIEMzNzEuNzc2LDE3NS43ODQsMzIwLjIxNiwxMjQuMjI0LDI1NiwxMjAuMjQ4VjE2LjEzNmMzMy4zNjgsMS4xMzYsNjQuOTQ0LDkuMzkyLDkzLjMyLDIzLjIzMmwtMzQuOTc2LDM0Ljk3NmwxMS4zMTIsMTEuMzEyICAgICBsMzguNDE2LTM4LjQxNkM0MzEuMTQ0LDg2LjE3Niw0NzcuMDU2LDE1Ny42OTYsNDc5Ljg2NCwyNDB6IiBmaWxsPSIjNGE5MGUyIi8+CgkJCTxyZWN0IHg9IjQ4MCIgeT0iMzIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzRhOTBlMiIvPgoJCQk8cmVjdCB4PSI0MTYiIHk9IjMyIiB3aWR0aD0iNDgiIGhlaWdodD0iMTYiIGZpbGw9IiM0YTkwZTIiLz4KCQkJPHJlY3QgeT0iNDQ4IiB3aWR0aD0iNDgiIGhlaWdodD0iMTYiIGZpbGw9IiM0YTkwZTIiLz4KCQkJPHJlY3QgeD0iNjQiIHk9IjQ0OCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjNGE5MGUyIi8+CgkJCTxwYXRoIGQ9Ik0xOTAuMTEyLDE3NkgxNTJ2MTZoMjUuODg4bDI0LDg4SDIyNGg3MmgzMS4wNjRsMTAtODBIMTk2LjY1NkwxOTAuMTEyLDE3NnogTTMxOC45MzYsMjE2bC02LDQ4aC05OC44MjRsLTEzLjA5Ni00OCAgICAgSDMxOC45MzZ6IiBmaWxsPSIjNGE5MGUyIi8+CgkJCTxwYXRoIGQ9Ik0yMDAsMzA0YzAsMTMuMjMyLDEwLjc2OCwyNCwyNCwyNHMyNC0xMC43NjgsMjQtMjRzLTEwLjc2OC0yNC0yNC0yNFMyMDAsMjkwLjc2OCwyMDAsMzA0eiBNMjI0LDI5NmM0LjQxNiwwLDgsMy41ODQsOCw4ICAgICBjMCw0LjQxNi0zLjU4NCw4LTgsOHMtOC0zLjU4NC04LThDMjE2LDI5OS41ODQsMjE5LjU4NCwyOTYsMjI0LDI5NnoiIGZpbGw9IiM0YTkwZTIiLz4KCQkJPHBhdGggZD0iTTI3MiwzMDRjMCwxMy4yMzIsMTAuNzY4LDI0LDI0LDI0czI0LTEwLjc2OCwyNC0yNHMtMTAuNzY4LTI0LTI0LTI0UzI3MiwyOTAuNzY4LDI3MiwzMDR6IE0yOTYsMjk2YzQuNDE2LDAsOCwzLjU4NCw4LDggICAgIGMwLDQuNDE2LTMuNTg0LDgtOCw4Yy00LjQxNiwwLTgtMy41ODQtOC04QzI4OCwyOTkuNTg0LDI5MS41ODQsMjk2LDI5NiwyOTZ6IiBmaWxsPSIjNGE5MGUyIi8+CgkJCTxyZWN0IHg9IjQ0OCIgeT0iMjA4IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiM0YTkwZTIiLz4KCQkJPHJlY3QgeD0iNDE2IiB5PSIyMDgiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzRhOTBlMiIvPgoJCQk8cmVjdCB4PSIzODQiIHk9IjIwOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjNGE5MGUyIi8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                            <h4>Business Analytics and Intelligence</h4>
+                            <p>
+                                Text will go here talking about Business Analytics and Intelligence
+                            </p>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+
+
+
+
+
+        <section>
+            <div class="tab__content">
+                <section class="text-center imagebg" data-overlay='4'>
+                    <div class="background-image-holder">
+                        <img alt="background" src="img/conference3.jpg" />
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <h2>Services</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="feature feature-3 boxed boxed--lg boxed--border">
+                                    <i class="icon icon--lg icon-Business-Man"></i>
+                                    <h4>Service Enterprise Managers</h4>
+                                    <p>
+                                        Text will go here about Servicing Enterprise Mangers
+                                    </p>
+                                    <a href="#">
+                                                    Learn More
+                                                </a>
+                                </div>
+                                <!--end feature-->
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="feature feature-3 boxed boxed--lg boxed--border">
+                                    <i class="icon icon--lg icon-Search-onCloud"></i>
+                                    <h4>Strategic Evaluations</h4>
+                                    <p>
+                                        Text will go here about how CEMOSoft conducts Strategic Evaluations
+                                    </p>
+                                    <a href="#">
+                                                    Learn More
+                                                </a>
+                                </div>
+                                <!--end feature-->
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="feature feature-3 boxed boxed--lg boxed--border">
+                                    <i class="icon icon--lg icon-Chip"></i>
+                                    <h4>Integrate Emerging Technology</h4>
+                                    <p>
+                                        Text will go here on how CEMOSoft Integrates Emerging Technologies
+                                    </p>
+                                    <a href="#">
+                                                    Learn More
+                                                </a>
+                                </div>
+                                <!--end feature-->
+                            </div>
+                        </div>
+                        <!--end of row-->
+                    </div>
+                    <!--end of container-->
+                </section>
+            </div>
+        </section>
+
+
+        <section class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <h1>Our Management Team</h1>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+
+
+        <section class="switchable feature-large">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img alt="Image" class="border--round" src="img/mahesh.jpeg" />
+                    </div>
+                    <div class="col-sm-6 col-md-5">
+                        <div class="switchable__text">
+                            <div class="text-block">
+                                <h2>Mahesh Dharan</h2>
+                                <span>Founder &amp; CEO</span>
+                            </div>
+                            <p class="lead">
+                                Mahesh Dharan is responsible for business development, innovation and strategic eco-partnering. His experiences includes managing corporate development, multi-business strategic planning, M&A integration, new ventures, and ecosystems. He has successfully led/managed large enterprise business transformation, process re-engineering, Information Systems/ERP product development, customer services call centres systems/technologies.
+
+                            </p>
+                            <ul class="social-list list-inline list--hover">
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-mail icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-google icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-twitter icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-instagram icon icon--xs"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <section class="switchable switchable--switch feature-large">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img alt="Image" class="border--round" src="img/Mr.-Guru-Murthy1.jpg" />
+                    </div>
+                    <div class="col-sm-6 col-md-5">
+                        <div class="switchable__text">
+                            <div class="text-block">
+                                <h2>Guru Murthy</h2>
+                                <span>CTO</span>
+                            </div>
+                            <p class="lead">
+                                Guru Murthy is the founder/CEO of Processware Systems (P) Ltd., a leading provider of software solutions to Aerospace, Banking and Financial institutions. Guru Murthy has been involved in design and development of software solutions to financial institutions since 1995. He has spoken at various seminars/conferences on adoption of technology by financial institutions. He is involved in providing shared computing resources to smaller institutions on an ASP basis in India, using Cloud computing model.
+                            </p>
+                            <ul class="social-list list-inline list--hover">
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-mail icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-google icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-twitter icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-instagram icon icon--xs"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <section class="switchable feature-large">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img alt="Image" class="border--round" src="img/bob.jpg" />
+                    </div>
+                    <div class="col-sm-6 col-md-5">
+                        <div class="switchable__text">
+                            <div class="text-block">
+                                <h2>Bob Barnitt</h2>
+                                <span>Business Development</span>
+                            </div>
+                            <p class="lead">
+                                Bob was with Intel Corporation for over 20 years, where he held various senior management positions in marketing, sales, and business unit management.Bob is a co-founder of Dark Signal Research. Dark Signal is a research company dedicated to solving hard problems in computer science and producing intellectual property based on those solutions. Bob graduated from University of Arizona.
+                            </p>
+                            <ul class="social-list list-inline list--hover">
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-mail icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-google icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-twitter icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="socicon socicon-instagram icon icon--xs"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+
+        <section class="text-center bg--secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <h1>Our Leadership</h1>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+
+
+        <section class="text-center bg--secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="feature feature-8">
+                            <img alt="Image" src="img/panch.jpg" />
+                            <h5>Dr. Sethuraman "Panch" Panchanathan</h5>
+                            <span>Executive Vice President at Arizona State University</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="feature feature-8">
+                            <img alt="Image" src="img/fister.png" />
+                            <h5>Michael J Fister</h5>
+                            <span>COO at Bollare Communications</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="feature feature-8">
+                            <img alt="Image" src="img/lerner.jpg" />
+                            <h5>Dr. Josh Lerner</h5>
+                            <span>Harvard Business School</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="feature feature-8">
+                            <img alt="Image" src="img/Durgee.jpg" />
+                            <h5>Dr. Jeff Durgee</h5>
+                            <span>Rensselaer Polytechnic Institute</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feature feature-8">
+                            <img alt="Image" src="img/john-friar.jpg" />
+                            <h5>Dr. John Friar</h5>
+                            <span>Northeastern University</span>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+
+        <section class="switchable ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-7 col-xs-12">
+                        <div class="map-container border--round" data-maps-api-key="AIzaSyCfo_V3gmpPm1WzJEC9p_sRbgvyVbiO83M" data-address="5754 West Shannon Street Chandler, Arizona" data-marker-title="CEMOSoft" data-map-style="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFBB00&quot;},{&quot;saturation&quot;:43.400000000000006},{&quot;lightness&quot;:37.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFC200&quot;},{&quot;saturation&quot;:-61.8},{&quot;lightness&quot;:45.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:51.19999999999999},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:52},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#0078FF&quot;},{&quot;saturation&quot;:-13.200000000000003},{&quot;lightness&quot;:2.4000000000000057},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#00FF6A&quot;},{&quot;saturation&quot;:-1.0989010989011234},{&quot;lightness&quot;:11.200000000000017},{&quot;gamma&quot;:1}]}]" data-map-zoom="15"></div>
+                    </div>
+                    <div class="col-md-5 col-sm-5">
+                        <div class="switchable__text">
+                            <h3>5754 West Shannon Street 
+                                    <br />Chandler, Arizona 85226</h3>
+                            <p class="lead">
+                                E:
+                                <a href="#">info@cemosoft.com</a>
+                                <br /> P: (650) 666-3282
+                            </p>
+                            <!--
+                                <p class="lead">
+                                    Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days.
+                                </p>
+                                <p class="lead">
+                                    We are open from 9am &mdash; 5pm week days.
+                                </p>
+-->
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+
+        <section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#4876BD,#5448BD,#8F48BD,#BD48B1'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>Contact us today to learn more.</span>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <footer class="footer-7 text-center-xs bg--secondary  ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <span class="type--fine-print">&copy;
+                                <span class="update-year"></span> Chemosoft &mdash; All Rights Reserved</span>
+                    </div>
+                    <div class="col-sm-6 text-right text-center-xs">
+                        <ul class="social-list list-inline">
+                            <li>
+                                <a href="#">
+                                    <i class="socicon socicon-google icon icon--xs"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="socicon socicon-twitter icon icon--xs"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="socicon socicon-facebook icon icon--xs"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="socicon socicon-instagram icon icon--xs"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </footer>
     </div>
+    <!--<div class="loader"></div>-->
+    <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+        <i class="stack-interface stack-up-open-big"></i>
+    </a>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/flickity.min.js"></script>
+    <script src="js/easypiechart.min.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/ytplayer.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/granim.min.js"></script>
+    <script src="js/jquery.steps.min.js"></script>
+    <script src="js/countdown.min.js"></script>
+    <script src="js/twitterfetcher.min.js"></script>
+    <script src="js/spectragram.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
+
+</html>
